@@ -2,12 +2,17 @@ from selenium import webdriver
 import time
 
 try:
-    link = "http://suninjuly.github.io/registration1.html"
+    link = "http://suninjuly.github.io/registration2.html"
     browser = webdriver.Chrome()
     browser.get(link)
 
     # Ваш код, который заполняет обязательные поля
-    ...
+    value1 = browser.find_element_by_xpath('//div[@class=\'first_block\']//input[@class=\'form-control first\']')
+    value1.send_keys('nick')
+    value2 = browser.find_element_by_xpath('//div[@class=\'first_block\']//input[@class=\'form-control second\']')
+    value2.send_keys('zhig')
+    value3 = browser.find_element_by_xpath('//div[@class=\'first_block\']//input[@class=\'form-control third\']')
+    value3.send_keys('123@gmail.com')
 
     # Отправляем заполненную форму
     button = browser.find_element_by_css_selector("button.btn")
